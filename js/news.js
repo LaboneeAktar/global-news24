@@ -30,7 +30,7 @@ const displayCategoryNews = categories => {
     newsContainer.textContent = '';
 
     categories.forEach(category => {
-        console.log(category)
+        // console.log(category);
         const { title, details, thumbnail_url, author, total_view } = category;
         const div = document.createElement('div');
         div.innerHTML = `
@@ -39,16 +39,16 @@ const displayCategoryNews = categories => {
             <div class="card-body">
                 <h2 class="card-title">${title}</h2>
                 <p>${details.length > 200 ? details.slice(0, 400) + '...' : details}</p>
-                <div class="md:flex mt-10 space-x-28">
+                <div class="md:flex mt-10 space-x-20">
                     <div class="flex">
                         <img src="${author.img}" class="h-14 w-14 rounded-full" alt="image">
                         <span class="ml-5">
-                            <h1 class="text-xl">${author.name}</h1>
+                            <h1 class="text-lg">${author.name ? author.name : "No Data Found"}</h1>
                             <p>${author.published_date}</p>
                         </span>
                     </div> 
                     <div>
-                        <p class="mt-3 text-xl"><i class="fa-regular fa-eye"></i> ${total_view}K</p>
+                        <p class="mt-3 text-lg"><i class="fa-regular fa-eye"></i> ${total_view ? total_view : 'No Data Found'}</p>
                     </div>
                    <div class="mt-3">
                         <i class="fa-solid fa-star-half-stroke"></i>
@@ -69,9 +69,28 @@ const displayCategoryNews = categories => {
 }
 
 
-loadCategoryId('01')
+const loadDetails = () => {
+    const url = `https://openapi.programming-hero.com/api/news/0282e0e58a5c404fbd15261f11c2ab6a`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => diplayDetails(data.data))
+}
+
+const diplayDetails = details => {
+
+    details.forEach(detail => {
+        console.log(detail);
+    })
+}
+
+loadDetails();
 
 
 
+
+
+
+
+loadCategoryId('01');
 
 loadCategoryName();
