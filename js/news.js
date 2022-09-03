@@ -19,6 +19,8 @@ const displayCategoryName = categories => {
 }
 
 const loadCategoryId = (category_id) => {
+    const loaderStart = document.getElementById('loader');
+    loaderStart.classList.remove('invisible');
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
     fetch(url)
         .then(res => res.json())
@@ -68,6 +70,8 @@ const displayCategoryNews = categories => {
         `;
         newsContainer.appendChild(div);
     })
+    const loaderStart = document.getElementById('loader');
+    loaderStart.classList.add('invisible');
 }
 
 
