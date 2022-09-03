@@ -68,47 +68,107 @@
     <!-- main section start  -->
     <main class="md:px-24 md:py-8">
 
-        <section>
+        <section class="font-serif text-lg">
+            <h1 class="text-2xl pb-7 font-medium">Question-1: Write down Differences Between var, let and const in
+                JavaScript.</h1>
+            <h1 class="text-2xl pb-7 font-medium">Answer: </h1>
             <div class="overflow-x-auto">
-                <table class="table w-full">
+                <table class="table w-full text-center">
                     <!-- head -->
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>No.</th>
+                            <th>var</th>
+                            <th>let</th>
+                            <th>const</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- row 1 -->
                         <tr>
                             <th>1</th>
-                            <td>Cy Ganderton</td>
-                            <td>Quality Control Specialist</td>
-                            <td>Blue</td>
+                            <td>var declarations are globally scoped.</td>
+                            <td>let declarations are block scoped.</td>
+                            <td>const declarations are block scoped.</td>
                         </tr>
                         <!-- row 2 -->
                         <tr>
                             <th>2</th>
-                            <td>Hart Hagerty</td>
-                            <td>Desktop Support Technician</td>
-                            <td>Purple</td>
+                            <td>It can be updated and re-declared.</td>
+                            <td>It can be updated but cannot be re-declared.</td>
+                            <td>It cannot be updated or re-declared.</td>
                         </tr>
                         <!-- row 3 -->
                         <tr>
                             <th>3</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
+                            <td>It can be declared without initialization.</td>
+                            <td>It can be declared without initialization.</td>
+                            <td>It can't be declared without initialization.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
+        <section class="font-serif text-lg py-20">
+            <h1 class="text-2xl pb-7 font-medium">Question-2: What are the Differences Between Regular function and
+                Arrow funtion in
+                JavaScript.</h1>
+            <h1 class="text-2xl pb-7 font-medium">Answer: </h1>
+            <div class="overflow-x-auto">
+                <p>Arrow function is a new feature introduced in ES6 that is a more
+                    concise syntax for writing function expressions. While both regular JavaScript functions and arrow
+                    functions work in a similar manner, there are certain differences between them.</p>
+                <p>Inside of a regular JavaScript function, this value (aka the execution context) is dynamic.The
+                    regular function can easily construct objects. <br> But the behavior of this inside of an arrow
+                    function differs considerably from the regular function's this behavior. The arrow function doesn't
+                    define its own execution context.</p>
+                <p>Inside the body of a regular function, arguments is a special array-like object containing the list
+                    of arguments with which the function has been invoked. On the other side, no arguments special
+                    keyword is defined inside an arrow function.</p>
+            </div>
+        </section>
+        <section class="font-serif text-lg">
+            <h1 class="text-2xl pb-7 font-medium">Question-3: What are the Differences Between map(), forEach() and
+                filter(), find() in
+                JavaScript.</h1>
+            <h1 class="text-2xl pb-7 font-medium">Answer: </h1>
+            <div class="overflow-x-auto">
+                <p>Differences between map() and forEach():</p>
+                <p>The main difference between map() and forEach() is that the map method returns a new array by
+                    applying
+                    the callback function on each element of an array, while the forEach method doesn't return anything.
 
+                    We can use the forEach() method to mutate the source array, but this isn't really the way it's meant
+                    to be used. Instead, it's great for when we need to do some action with each element of the array.
 
+                    On the other hand, the map() method is used for creating a new array, and thus, it's chainable. We
+                    can call a number of map operations one after the other.
 
+                    The forEach method doesn't return anything, so we can't chain it with any other methods - it's not
+                    chainable.</p> <br>
+                <p>Differences between map() and forEach():</p>
+                <p>The find() method is used to find all the descendant elements of the selected element. It finds the
+                    element in the DOM tree by traversing through the root to leaf.
+
+                    The filter() method is used to filters all the elements and returns the element that matches and the
+                    element that do not match are removed.
+
+                    The only difference is the filter() method search through all the elements while find() method
+                    search through all the child elements only.</p>
+            </div>
+        </section>
+        <section class="font-serif text-lg py-20">
+            <h1 class="text-2xl pb-7 font-medium">Question-4: Why we use Template String?</h1>
+            <h1 class="text-2xl pb-7 font-medium">Answer: </h1>
+            <div class="overflow-x-auto">
+                <p>Some benefits of using template string:</p>
+                <p>1. Template Literals use back-ticks (``) rather than the quotes ("") to define a string.</p>
+                <p>2. With template literals, we can use both single and double quotes inside a string.</p>
+                <p>3. Template literals allows multiline strings.</p>
+                <p>4. Template literals provide an easy way to interpolate variables and expressions into strings.</p>
+                <p>5. Template literals allow variables, expressions in strings.</p>
+            </div>
+        </section>
     </main>
 
     <!-- footer section  -->
@@ -129,9 +189,6 @@
             <p class="text-rose-900 text-center pt-5 pb-5"><small> 2022 © Global News24</small> </p>
         </div>
     </footer>
-
-
-    <script src="js/news.js"></script>
 </body>
 
 </html>
