@@ -28,7 +28,8 @@
         li,
         h1,
         h3,
-        p {
+        p,
+        .item {
             font-family: 'Bree Serif', serif;
         }
     </style>
@@ -47,8 +48,8 @@
                 <div class="flex-none">
                     <div class="dropdown dropdown-end">
                         <ul class="menu menu-horizontal p-0 text-lg">
-                            <li><a>News</a></li>
-                            <li><a>Blog</a></li>
+                            <li><a href="index.html">News</a></li>
+                            <li><a href="blog.html">Blog</a></li>
                         </ul>
                     </div>
                     <div class="dropdown dropdown-end">
@@ -63,7 +64,7 @@
             <hr>
         </section>
         <!-- category name  -->
-        <section class="md:px-48 mb-10">
+        <section class="md:px-48 mb-4">
             <div>
                 <ul id="category-container" class="menu menu-vertical lg:menu-horizontal lg:flex-row">
 
@@ -75,6 +76,33 @@
 
     <!-- main section start  -->
     <main class="md:px-24 md:py-8">
+        <!-- short by default  -->
+        <section class="pb-6">
+            <div tabindex="0" class="border border-base-300 bg-base-100 rounded-box w-1/2 mx-auto">
+                <div class="collapse-title text-xl font-medium text-center item">
+                    <span>0</span> item found in category <span>Name</span>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="lg:flex mb-16">
+                <h1 class="text-xl pt-4 ml-8 lg:ml-0">Short By View: </h1>
+                <div tabindex="0"
+                    class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box lg:w-40 ml-6">
+                    <div class="collapse-title text-lg font-medium font-serif">
+                        Default
+                    </div>
+                    <div class="collapse-content">
+                        <p>Short By Ratings</p>
+                    </div>
+                </div>
+                <div class="lg:ml-auto lg:pt-2 pt-8 ml-16">
+                    <button class="btn bg-emerald-600 text-lg normal-case font-serif text-white">Today's Pick</button>
+                    <button
+                        class="btn btn-outline btn-emerald text-emerald-600 text-lg normal-case font-serif">Trending</button>
+                </div>
+            </div>
+        </section>
         <!-- news card  -->
         <section>
             <div id="news-container" class="">
