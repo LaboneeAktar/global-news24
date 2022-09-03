@@ -1,3 +1,4 @@
+// load category name
 const loadCategoryName = () => {
     const url = `https://openapi.programming-hero.com/api/news/categories`;
     fetch(url)
@@ -6,10 +7,12 @@ const loadCategoryName = () => {
         .catch(error => console.log(error))
 }
 
+//display category name
 const displayCategoryName = categories => {
     const categoryContainer = document.getElementById('category-container');
     categories.forEach(category => {
         // console.log(category);
+
         const categoryLi = document.createElement('li');
         categoryLi.innerHTML = `
         <li onclick="loadCategoryId('${category.category_id}')">${category.category_name}</li>
@@ -18,9 +21,12 @@ const displayCategoryName = categories => {
     })
 }
 
+//load category id
 const loadCategoryId = (category_id) => {
+    //loader start
     const loaderStart = document.getElementById('loader');
     loaderStart.classList.remove('invisible');
+
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
     fetch(url)
         .then(res => res.json())
@@ -28,8 +34,24 @@ const loadCategoryId = (category_id) => {
         .catch(error => console.log(error))
 }
 
-
+//display category nnews card
 const displayCategoryNews = categories => {
+    // console.log(categories.length);
+    //sorting array of objects
+    categories.sort((a, b) => {
+        return b.total_view - a.total_view;
+    });
+
+    //News card count
+    const notFoundMessage = document.getElementById('not-found');
+    if (categories.length === 0) {
+        notFoundMessage.classList.remove('invisible');
+    }
+    else {
+        notFoundMessage.classList.add('invisible');
+    }
+    const categoryCount = document.getElementById('category-count');
+    categoryCount.innerText = categories.length;
     const newsContainer = document.getElementById('news-container');
     newsContainer.textContent = '';
 
@@ -70,11 +92,12 @@ const displayCategoryNews = categories => {
         `;
         newsContainer.appendChild(div);
     })
-    const loaderStart = document.getElementById('loader');
-    loaderStart.classList.add('invisible');
+    //loader end
+    const loaderEnd = document.getElementById('loader');
+    loaderEnd.classList.add('invisible');
 }
 
-
+//load card details
 const loadDetails = (_id) => {
     const url = `https://openapi.programming-hero.com/api/news/${_id}`;
     fetch(url)
@@ -83,11 +106,12 @@ const loadDetails = (_id) => {
         .catch(error => console.log(error))
 }
 
+// display card details
 const diplayDetails = details => {
     const detailsContainer = document.getElementById('details-container');
     detailsContainer.textContent = '';
     details.forEach(detail => {
-        console.log(detail);
+        // console.log(detail);
         const { title, details, total_view, rating, author } = detail;
         const detailDiv = document.createElement('div');
         detailDiv.innerHTML = `
@@ -105,12 +129,6 @@ const diplayDetails = details => {
 }
 
 loadDetails();
-
-
-
-
-
-
 
 loadCategoryId('08');
 
