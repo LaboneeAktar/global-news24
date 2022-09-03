@@ -58,7 +58,7 @@ const displayCategoryNews = categories => {
                         <i class="fa-regular fa-star"></i>
                    </div>
                     <div class="card-actions md:justify-end">
-                        <label onclick ="loadDetails('${category._id}')" for="my-modal-3" class="btn modal-button btn-secondary">Details  <i class="fa-solid fa-arrow-right ml-3"></i></label>
+                        <label onclick ="loadDetails('${category._id}')" for="my-modal-3" class="btn modal-button bg-emerald-600">Details  <i class="fa-solid fa-arrow-right ml-3"></i></label>
                     </div>
                 </div>
             </div>
