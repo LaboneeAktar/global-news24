@@ -81,15 +81,17 @@ const diplayDetails = details => {
     detailsContainer.textContent = '';
     details.forEach(detail => {
         console.log(detail);
+        const { title, details, total_view, rating, author } = detail;
         const detailDiv = document.createElement('div');
         detailDiv.innerHTML = `
             <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-            <h3 class="text-lg font-bold">Title: ${detail.title}</h3>
-            <p class="pt-4">Total View: </p>
-            <p class="py-1">Ratings: </p>
-            <h3 class="text-lg font-bold pt-4">Author Details</h3>
-            <p class="py-4">Name: </p>
-            <p class="py-4">Details: </p>
+            <h3 class="text-lg font-bold">Title: ${title}</h3>
+            <p class="py-4"> <span class="font-bold">Details:</span> ${details}</p>
+            <p class="pt-4"> <span class="font-bold">Total View:</span> ${total_view ? total_view : 'No Data Found'}</p>
+            <p class="py-1"> <span class="font-bold">Ratings:</span> ${rating.number}</p>
+            <h3 class="text-lg font-bold pt-4">Author Details:</h3>
+            <p class="pt-4"> <span class="font-bold">Name:</span> ${author.name ? author.name : "No Data Found"}</p>
+            <p class="py-1"> <span class="font-bold">Published Date & Time:</span> ${author.published_date}</p>
         `;
         detailsContainer.appendChild(detailDiv);
     })
