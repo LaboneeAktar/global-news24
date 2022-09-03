@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global News24</title>
-    <!-- google font  -->
+    <!-- google fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
 
     <!-- daisyui link  -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
@@ -20,13 +21,17 @@
         .kbd {
             font-family: 'Berkshire Swash', cursive;
         }
+
+        li {
+            font-family: 'Bree Serif', serif;
+        }
     </style>
 </head>
 
 <body>
     <header>
         <!-- Navbar section  -->
-        <section class="md:px-24 md:py-5">
+        <section class="md:px-24 md:py-8">
             <div class="navbar bg-base-100">
                 <div class="flex-1">
                     <h2 class="normal-case text-2xl">Global <kbd
@@ -49,8 +54,21 @@
                     </div>
                 </div>
             </div>
+            <hr>
+        </section>
+        <section class="md:px-48">
+            <div>
+                <ul id="category-container" class="menu menu-vertical lg:menu-horizontal lg:flex-row">
+
+                </ul>
+
+            </div>
         </section>
     </header>
+
+    <main></main>
+
+    <script src="js/news.js"></script>
 </body>
 
 </html>
