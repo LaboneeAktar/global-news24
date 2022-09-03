@@ -58,7 +58,7 @@ const displayCategoryNews = categories => {
                         <i class="fa-regular fa-star"></i>
                    </div>
                     <div class="card-actions md:justify-end">
-                        <button class="btn btn-secondary">Details <i class="fa-solid fa-arrow-right ml-3"></i></button>
+                        <label onclick ="loadDetails('${category._id}')" for="my-modal-3" class="btn modal-button btn-secondary">Details  <i class="fa-solid fa-arrow-right ml-3"></i></label>
                     </div>
                 </div>
             </div>
@@ -69,17 +69,29 @@ const displayCategoryNews = categories => {
 }
 
 
-const loadDetails = () => {
-    const url = `https://openapi.programming-hero.com/api/news/0282e0e58a5c404fbd15261f11c2ab6a`;
+const loadDetails = (_id) => {
+    const url = `https://openapi.programming-hero.com/api/news/${_id}`;
     fetch(url)
         .then(res => res.json())
         .then(data => diplayDetails(data.data))
 }
 
 const diplayDetails = details => {
-
+    const detailsContainer = document.getElementById('details-container');
+    detailsContainer.textContent = '';
     details.forEach(detail => {
         console.log(detail);
+        const detailDiv = document.createElement('div');
+        detailDiv.innerHTML = `
+            <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <h3 class="text-lg font-bold">Title: ${detail.title}</h3>
+            <p class="pt-4">Total View: </p>
+            <p class="py-1">Ratings: </p>
+            <h3 class="text-lg font-bold pt-4">Author Details</h3>
+            <p class="py-4">Name: </p>
+            <p class="py-4">Details: </p>
+        `;
+        detailsContainer.appendChild(detailDiv);
     })
 }
 
